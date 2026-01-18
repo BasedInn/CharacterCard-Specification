@@ -175,7 +175,7 @@ A `.charx` file is a standard ZIP archive containing resources.
 
 These fields directly influence the LLM generation context.
 
-- **`name`**: The primary identifier. Replaces` {{char}}` placeholders unless nickname is present
+- **`name`**: The primary identifier. Replaces `{{char}}` placeholders unless `nickname` is present
   (CCv3).
 - **`description`** / **`personality`**: Usually combined and sent as system instruction or
   top-of-context info.
@@ -204,7 +204,7 @@ The assets array defines resources.
     - `http://` / `https://`: Remote resource.
     - `embeded://`: References a file inside the CHARX zip.
     - `ccdefault:`:
-        - For icon: Refers to the PNG image the card is embedded in.
+        - For `icon`: Refers to the PNG image the card is embedded in.
         - For `user_icon`: Refers to the application's default user avatar.
 - **Resolution**: If multiple assets of type icon exist, the one with name: "`main`" is the primary
   avatar.
@@ -245,22 +245,22 @@ struct LorebookEntry {
 
 ### **5.2 Injection Logic**
 
-1. **Scan**: Check last scan_depth messages for strings in keys.
+1. **Scan**: Check last `scan_depth` messages for strings in `keys`.
 2. **Filter**:
     - If `selective` is `true`, check `secondary_keys`.
     - If `use_regex` is `true`, treat `keys` as RegExp patterns.
 3. **Budget**: If total tokens > `token_budget`, remove entries with lowest priority (or
-   `insertion_order` if priority is unset) until within budget.
-4. **Insert**: Place content into prompt context based on position or `insertion_order`.
+   `insertion_order` if `priority` is unset) until within budget.
+4. **Insert**: Place `content` into prompt context based on `position` or `insertion_order`.
 
 ## **6. Advanced Features (CCv3)**
 
 ### **6.1 Decorators**
 
-CCv3 allows special syntax in Lorebook content to control injection behavior. Syntax:
+CCv3 allows special syntax in Lorebook `content` to control injection behavior. Syntax:
 `@@decorator_name value`.
 
-- `@@depth N`: Insert N messages/tokens back from the latest message.
+- `@@depth N`: Insert `N` messages/tokens back from the latest message.
 - `@@scan_depth N`: Override scan depth for this specific entry.
 - `@@role [system|user|assistant]`: Force the injected content to be treated as a specific role.
 - `@@activate_only_after N`: Only trigger if message count > `N`.
@@ -306,20 +306,20 @@ To determine how to parse an imported file:
 2. **Check `spec_version`** (`float` parsing):
     - **CRITICAL**: The CCv3 specification mandates that `spec_version` strings be parsed as
       floating-point numbers. This breaks Semantic Versioning conventions.
-    - `"3.8"` (parsed as `3.80f`) > "3.11" (parsed as `3.11f`).
+    - `"3.8"` (parsed as `3.80f`) > `"3.11"` (parsed as `3.11f`).
     - Implementers MUST NOT use SemVer comparison libraries. Use simple `float` comparison.
 
 ### **7.2 Backwards Compatibility**
 
-- **CCv3 reading CCv2**: CCv3 is a superset. Populate missing CCv3 fields (like assets) with
+- **CCv3 reading CCv2**: CCv3 is a superset. Populate missing CCv3 fields (like `assets`) with
   defaults (empty array or standard icon mapping).
-- **CCv2 reading CCv1**: Wrap CCv1 fields into the data object structure.
-- **Handling character_book**: Convert legacy CCv1/CCv2 lorebooks to the CCv3 structure by assuming
-  use_regex: false and constant: false unless specified.
+- **CCv2 reading CCv1**: Wrap CCv1 fields into the `data` object structure.
+- **Handling `character_book`**: Convert legacy CCv1/CCv2 lorebooks to the CCv3 structure by assuming
+  `use_regex: false` and `constant: false` unless specified.
 
 ### **7.3 Unknown Fields**
 
-Applications MUST NOT delete unknown fields in extensions or the root object when saving/exporting.
+Applications MUST NOT delete unknown fields in `extensions` or the root object when saving/exporting.
 This ensures forward compatibility and preserves data from other applications.
 
 ### **7.4 Backfilling (V3 to V2 Downgrade)**
