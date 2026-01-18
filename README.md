@@ -1,6 +1,6 @@
 # **Unified Character Card Specification (UCCS)**
 
-**Version:** `1.0.0-consolidated`  
+**Version:** `0.0.1-consolidated`  
 **Date:** 2026-01-18  
 **Status:** Informational  
 **Abstract:** This document consolidates the specifications for Character Card (CC) versions CCv1,
