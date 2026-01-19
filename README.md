@@ -1,7 +1,7 @@
 # **Unified Character Card Specification (UCCS)**
 
-**Version:** `0.0.1-consolidated`  
-**Date:** 2026-01-18  
+**Version:** `1.1.0-consolidated`  
+**Date:** 2026-01-19  
 **Status:** Informational  
 **Abstract:** This document consolidates the specifications for Character Card (CC) versions CCv1,
 CCv2, and CCv3 into a single, unambiguous standard for implementing character interchange in
@@ -335,7 +335,8 @@ struct LorebookEntry {
 
 If `recursive_scanning` is absent, the application can decide how to handle recursive scanning.
 
-If `case_sensitive` is absent, the applcation **MAY** treat the lorebook entry's keys as case-sensitive or case-insensitive.
+If `case_sensitive` is absent, the applcation **MAY** treat the lorebook entry's keys as
+case-sensitive or case-insensitive.
 
 ### **5.2 Injection Logic**
 
@@ -386,7 +387,9 @@ CCv3 allows special syntax in Lorebook `content` to control injection behavior. 
 - `@@is_user_icon [name]`: Only trigger if user icon matches `[name]`.
 - `@@additional_keys K1,K2`: Require at least one of these keys to match (`AND` logic with main
   keys).
-  - If `use_regex` is `true`, applications SHOULD treat these keys as RegExp pattern. Applications MAY ignore this decorator entirely when `use_regex` is `true` for performance reasons.
+  - If `use_regex` is `true`, applications **SHOULD** treat these keys as RegExp pattern.
+    Applications **MAY** ignore this decorator entirely when `use_regex` is `true` for performance
+    reasons.
 - `@@exclude_keys K1,K2`: Prevent trigger if any of these keys match.
 - `@@ignore_on_max_context`: Do not trigger (or trim first) if context limit is reached.
 - `@@disable_ui_prompt [type]`: Suppresses the inclusion of the specified prompt field/setting.
@@ -408,7 +411,7 @@ Multiple fallbacks are checked top-to-bottom until one is recognized.
 
 ### **6.2 Macros (Curly Braced Syntax)**
 
-Applications MUST support placeholders based on the card version.
+Applications **MUST** support placeholders based on the card version.
 
 #### Universal Macros (CCv1, CCv2, CCv3)
 
