@@ -309,9 +309,9 @@ struct LorebookEntry {
   case_sensitive?: Boolean;
 
   /* Optional Metadata */
-  name?: String;             // Entry name (AgnAI)
-  id?: String | Number;      // Entry ID (ST, Risu)
-  comment?: String;          // Comment (ST, Risu)
+  name?: String;         // Entry name (AgnAI)
+  id?: String | Number;  // Entry ID (ST, Risu)
+  comment?: String;      // Comment (ST, Risu)
   extensions: Map<String, Any>;
 
   /* CCv3 Features (Backwards Compatible as Optional) */
