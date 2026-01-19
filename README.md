@@ -21,7 +21,7 @@ existing iterations of the standard (CCv1, CCv2, CCv3) into a single reference f
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
 "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC
-2119\.
+2119.
 
 - **MUST / REQUIRED / SHALL**: Absolute requirement.
 - **SHOULD / RECOMMENDED**: Strong recommendation; ignore only with full understanding of
@@ -155,7 +155,7 @@ struct CharacterDataV3 {
 }
 
 struct CharacterAsset {
-  type: String;  // "icon" | "background" | "user\_icon" | "emotion" | "other"
+  type: String;  // "icon" | "background" | "user_icon" | "emotion" | "other"
   uri: String;   // URL, "embeded://path", or "ccdefault:"
   name: String;  // Identifier (e.g., "happy", "main")
   ext: String;   // File extension (png, jpeg, webp)
@@ -247,7 +247,7 @@ These fields directly influence the LLM generation context.
   top-of-context info.
 - **`scenario`**: Describes the current scene.
 - **`mes_example`**: MUST be formatted as dialogue examples (e.g.,
-  `<START\>\n{{user}}: Hello\n{{char}}: Hi!`). Pruned if context limit is reached.
+  `<START>\n{{user}}: Hello\n{{char}}: Hi!`). Pruned if context limit is reached.
 - **`system_prompt`** (CCv2+): If present and not empty, this MUST replace the user's global system
   prompt settings.
   - **`{{original}}`**: Applications MUST replace this placeholder with the user's global system
@@ -313,7 +313,7 @@ chat history.
 
 ```rust
 struct Lorebook {
-  spec: String;                  // Recommended: "lorebook\_v3"
+  spec: String;                  // Recommended: "lorebook_v3"
   scan_depth?: Integer;          // How many recent messages to scan for keywords
   token_budget?: Integer;        // Max tokens allowed for lorebook injection
   recursive_scanning?: Boolean;  // If true, injected content is scanned for other keywords
