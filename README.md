@@ -51,6 +51,17 @@ Deficiencies, idiosyncrasies, or non-standard architectural decisions inherent t
 standards are retained by design. Feedback regarding these foundational design choices should be
 directed to the original specification authors.
 
+### **1.4 Sources**
+
+This unified specification is derived directly from the following upstream standards:
+
+- Character Card V1 (Legacy): The de facto standard established by early frontend implementations
+  (TavernAI, etc.), formally documented retrospectively in the V2 specification.
+- Character Card V2:
+  [`malfoyslastname/character-card-spec-v2`](https://github.com/malfoyslastname/character-card-spec-v2).
+- Character Card V3:
+  [`kwaroran/character-card-spec-v3`](https://github.com/kwaroran/character-card-spec-v3).
+
 ## **2. Data Models**
 
 This specification uses a generic Interface Definition Language (IDL) to describe the JSON

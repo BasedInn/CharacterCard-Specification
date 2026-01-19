@@ -1,0 +1,6 @@
+[submodule "character-card-spec-v2"]
+	path = character-card-spec-v2
+	url = https://github.com/malfoyslastname/character-card-spec-v2
+[submodule "character-card-spec-v3"]
+	path = character-card-spec-v3
+	url = https://github.com/kwaroran/character-card-spec-v3
