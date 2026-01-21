@@ -1,6 +1,6 @@
 # **Unified Character Card Specification (UCCS)**
 
-**Version:** `1.1.0-consolidated`  
+**Version:** `1.2.0-consolidated`  
 **Date:** 2026-01-19  
 **Status:** Informational  
 **Abstract:** This document consolidates the specifications for Character Card (CC) versions CCv1,
@@ -312,8 +312,14 @@ chat history.
 ### **5.1 Lorebook Structure**
 
 ```rust
+struct ExportedLorebook {  // Applicable only to standalone lorebook (V3 specs)
+    spec: "lorebook_v3";   // Recommended by specs
+    data: Loorebook;
+}
+
 struct Lorebook {
-  spec: String;                  // Recommended: "lorebook_v3"
+  name?: String;
+  description?: String;
   scan_depth?: Integer;          // How many recent messages to scan for keywords
   token_budget?: Integer;        // Max tokens allowed for lorebook injection
   recursive_scanning?: Boolean;  // If true, injected content is scanned for other keywords
