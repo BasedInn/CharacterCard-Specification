@@ -1,7 +1,7 @@
 # Unified Character Card Specification
 
 **Status:** Consolidated Reference Document  
-**Version:** `2.0.0-consolidated`  
+**Version:** `2.0.1-consolidated`  
 **Date:** 2026-01-26  
 **Based On:** Character Card V2 (malfoyslastname/character-card-spec-v2), Character Card V3
 (kwaroran/character-card-spec-v3)
@@ -84,7 +84,7 @@ This specification is self-contained. The following references are informational
 - **ECMAScript Regular Expressions:** The regular expression syntax used in lorebook key matching
   when regex mode is enabled.
 - **Base64 (RFC 4648):** The encoding scheme used for embedding JSON data in image metadata.
-- **BCP 47 (RFC 5646):** Language tags used in multilingual creator notes.
+- **ISO 639-1:** Language tags used in multilingual creator notes.
 - **Unicode UTF-8 (RFC 3629):** Character encoding for all string values.
 
 ---
@@ -715,8 +715,8 @@ Notes from the character creator intended for users and other creators.
 | Default        | Absent                             |
 | Used in Prompt | MUST NOT                           |
 
-Localized versions of creator notes. Keys **MUST** be valid BCP 47 language tags (e.g., `"en"`,
-`"ja"`, `"zh-Hans"`).
+Localized versions of creator notes. Keys **MUST** be valid ISO 639-1 language tags (e.g., `"en"`,
+`"ja"`).
 
 **Selection Algorithm:**
 
